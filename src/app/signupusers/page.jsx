@@ -32,11 +32,16 @@ function SignUp() {
   const auth = getAuth();
   const [googleData, setGoogleData] = useState(null);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [modalError, setModalError] = useState(false);
   const emailRef = useRef(null);
   const nameRef = useRef(null);
   const lastnameRef = useRef(null);
   const passRef = useRef(null);
   const pathname = usePathname();
+
+  const toggleModalModalError = () => {
+    setModalError(!modalError);
+  };
 
   useEffect(() => {
     if (googleData) {
@@ -81,7 +86,7 @@ function SignUp() {
         setIsDisabled(false);
       })
       .catch((error) => {
-        alert(error);
+        toggleModalModalError();
       });
   };
 
@@ -313,6 +318,24 @@ function SignUp() {
             <p>
               Please Log In to your account to start looking for your dream job.
             </p>
+            <Link href="/landing">
+              <button className={styles.btn_modal}>Go to Home Page</button>
+            </Link>
+          </div>
+        </div>
+      )}
+      {modalError && (
+        <div className={styles.modal}>
+          <div className={styles.overlay} onClick={toggleModalModalError}></div>
+          <div className={styles.modal_content}>
+            <span
+              className={styles.close_button}
+              onClick={toggleModalModalError}
+            >
+              X
+            </span>
+            <h2>Oops</h2>
+            <p>That user already exists.</p>
             <Link href="/landing">
               <button className={styles.btn_modal}>Go to Home Page</button>
             </Link>

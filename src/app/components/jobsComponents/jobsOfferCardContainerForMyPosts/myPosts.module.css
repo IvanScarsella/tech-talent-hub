@@ -129,6 +129,20 @@
   animation-direction: reverse;
 }
 
+.noVacanciesText {
+  font-family: "Roboto Regular";
+  font-size: 18px;
+  color: black;
+}
+
+.noVacanciesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 .spinner::after {
   margin: 8.9px;
 }
