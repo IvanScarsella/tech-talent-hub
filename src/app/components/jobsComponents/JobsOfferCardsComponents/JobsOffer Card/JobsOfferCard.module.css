@@ -11,9 +11,8 @@
 }
 
 .Container:hover {
-  border-color: #b682d9;
-  scale: 1.03;
-  transition: 0.3s;
+  border-color: #6850BF;
+
 }
 .ContainerB {
   border: solid;
