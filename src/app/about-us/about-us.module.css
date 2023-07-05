@@ -1,7 +1,6 @@
 .Container {
   margin-left: 120px;
   display: flex;
-
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
@@ -17,7 +16,6 @@
   margin-left: 120px;
 }
 
-
 .subtitle {
   text-align: center;
   font-family: "Roboto Regular";
@@ -28,7 +26,6 @@
   margin: 40px 0;
   text-align: center;
   letter-spacing: -0.011em;
-
   color: #000000;
 }
 
@@ -43,4 +40,24 @@
   letter-spacing: -0.011em;
   margin-inline: auto;
   color: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .Container {
+    margin-left: 20px;
+  }
+
+  .titleContainer {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+
+  .title {
+    font-size: 30px;
+  }
 }
