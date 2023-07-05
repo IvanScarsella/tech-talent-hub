@@ -1,22 +1,20 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import styles from "../MercadoPagoButton/MercadoPagoButton.module.css";
 import { Loader } from "../Loader/Loader";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-
+import { useSearchParams } from "next/navigation";
 export const MercadoPagoButton = ({ plan, section }) => {
   const [url, setUrl] = useState("/loginpro");
   const [isPremium, setIsPremium] = useState(false);
   const [loading, setLoading] = useState(true);
-  // const [landing, setLanding] = useState(false)
   const router = useRouter();
 
   // Check for window
   const isBrowser = typeof window !== "undefined";
-  const storedUserData = isBrowser
+  let storedUserData = isBrowser
     ? JSON.parse(localStorage.getItem("userData"))
     : null;
 
@@ -63,12 +61,32 @@ export const MercadoPagoButton = ({ plan, section }) => {
       };
 
       generateLink();
-
-      setIsPremium(storedUserData.isPremium);
       // actualPlan = storedUserData.isPremium
     }
   }, [plan]);
 
+  //? Upgrade with Mercado pago
+  const searchParams = useSearchParams();
+  const paymentId = searchParams.get('payment_id')
+  useEffect(() => {
+    const updatePremium = async (data) => {
+      const paymentData = {
+        topic: "payment",
+        paymentId: paymentId,
+        userId: data.id,
+      }
+      const response = (await axios.post("/api/notify", paymentData)).data
+      if(response.message === "UPGRADE SUCCESSFULL!") {
+        setIsPremium(true);
+        const userData = JSON.stringify(response.userData);
+        localStorage.removeItem("userData");
+        localStorage.setItem("userData", JSON.stringify(userData))
+        storedUserData = JSON.parse(localStorage.getItem("userData"))
+      }
+    }
+    if(paymentId && isPremium === false) updatePremium(storedUserData);
+  },[])
+  //? Downgrade
   const downgradeAccount = async () => {
     const { data } = await axios.post("/api/downgradeAccount", {
       userId: storedUserData.id,
@@ -81,8 +99,6 @@ export const MercadoPagoButton = ({ plan, section }) => {
       alert("tu cuenta no se pudo actualizar al plan básico");
     }
   };
-
-  console.log(storedUserData);
 
   const renderButton = () => {
     if (section === "landing") {
