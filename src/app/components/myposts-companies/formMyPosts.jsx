@@ -189,6 +189,9 @@ const FormMyPosts = ({ parsedData }) => {
         <div className={styles.modal}>
           <div className={styles.overlay} onClick={toggleModal}></div>
           <div className={styles.modal_content}>
+            <span className={styles.close_button} onClick={toggleModal}>
+              X
+            </span>
             <h2>Create New Post</h2>
             <p>
               Create a New Vacancy Post and find the best candidate for the job!

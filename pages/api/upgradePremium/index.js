@@ -64,6 +64,6 @@ export default async function upgradePremium(userId) {
     await transporter.sendMail(mail);
 
     // console.log(`${updatedUser.name} upgraded his premium plan`);
+    return updatedUser;
   }
-  return updatedUser;
 }
