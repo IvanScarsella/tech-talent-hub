@@ -45,7 +45,7 @@ body.active-modal {
 .modal,
 .overlay {
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     top: 0;
     left: 0;
     right: 0;
@@ -70,6 +70,11 @@ body.active-modal {
     max-width: 1000px;
     min-width: 500px;
     z-index: 2000;
+}
+
+.modal_content h2{
+    font-family: "Merriweather";
+    font-size: 25px;
 }
 
 /* PAGE CONTAINER */
@@ -273,4 +278,12 @@ body.active-modal {
     margin-top: -10px;
     margin-bottom: 15px;
     font-size: 18px;
+}
+
+.close_button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 24px;
 }
