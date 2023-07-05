@@ -68,7 +68,9 @@ export const MercadoPagoButton = ({ plan, section }) => {
   //? Upgrade with Mercado pago
   const searchParams = useSearchParams();
   const paymentId = searchParams.get("payment_id");
+
   useEffect(() => {
+    let isMounted = false;
     const updatePremium = async (data) => {
       const paymentData = {
         topic: "payment",
@@ -80,11 +82,12 @@ export const MercadoPagoButton = ({ plan, section }) => {
         setIsPremium(true);
         const userData = JSON.stringify(response.userData);
         localStorage.removeItem("userData");
-        localStorage.setItem("userData", JSON.stringify(userData));
-        storedUserData = JSON.parse(localStorage.getItem("userData"));
+        localStorage.setItem("userData", userData);
+        storedUserData = response.userData;
       }
     };
     if (paymentId && isPremium === false) updatePremium(storedUserData);
+    isMounted = true;
   }, []);
   //? Downgrade
   const downgradeAccount = async () => {
@@ -94,7 +97,6 @@ export const MercadoPagoButton = ({ plan, section }) => {
 
     if (data.message === "success") {
       router.push("/landing");
-      // console.log("success");
     } else {
       alert("tu cuenta no se pudo actualizar al plan básico");
     }
