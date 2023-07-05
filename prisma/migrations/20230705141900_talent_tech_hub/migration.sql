@@ -43,6 +43,7 @@ CREATE TABLE "Company" (
     "isActive" BOOLEAN NOT NULL DEFAULT true,
     "isPremium" BOOLEAN NOT NULL DEFAULT false,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "googleAuth" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "Company_pkey" PRIMARY KEY ("id")
 );
@@ -94,6 +95,9 @@ CREATE TABLE "User" (
     "limitFreeVacancies" INTEGER NOT NULL DEFAULT 20,
     "resetLimitFreeVacancies" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "superAdmin" BOOLEAN NOT NULL DEFAULT false,
+    "remainingPremiumDays" INTEGER NOT NULL DEFAULT 0,
+    "premiumUpdateDate" TIMESTAMP(3) NOT NULL DEFAULT '1970-01-01 00:00:00'::timestamp without time zone,
+    "googleAuth" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
