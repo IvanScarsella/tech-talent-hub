@@ -152,9 +152,6 @@ function MyProfileUsers() {
             <FileUploader userId={userId} />
           </div>
         </div>
-        {userData && userData.remainingPremiumDays !== 0 ? (
-          <span>Remaining premium days: {userData.remainingPremiumDays}</span>
-        ) : null}
         {userData &&
         userData.remainingPremiumDays < 7 &&
         userData.remainingPremiumDays !== 0 ? (
