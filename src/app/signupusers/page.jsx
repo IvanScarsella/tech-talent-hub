@@ -32,11 +32,16 @@ function SignUp() {
   const auth = getAuth();
   const [googleData, setGoogleData] = useState(null);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [modalError, setModalError] = useState(false);
   const emailRef = useRef(null);
   const nameRef = useRef(null);
   const lastnameRef = useRef(null);
   const passRef = useRef(null);
   const pathname = usePathname();
+
+  const toggleModalModalError = () => {
+    setModalError(!modalError);
+  };
 
   useEffect(() => {
     if (googleData) {
@@ -81,7 +86,7 @@ function SignUp() {
         setIsDisabled(false);
       })
       .catch((error) => {
-        alert(error);
+        toggleModalModalError();
       });
   };
 
@@ -306,10 +311,31 @@ function SignUp() {
         <div className={styles.modal}>
           <div className={styles.overlay} onClick={toggleModal}></div>
           <div className={styles.modal_content}>
+            <span className={styles.close_button} onClick={toggleModal}>
+              X
+            </span>
             <h2>Thank you for registering!</h2>
             <p>
               Please Log In to your account to start looking for your dream job.
             </p>
+            <Link href="/landing">
+              <button className={styles.btn_modal}>Go to Home Page</button>
+            </Link>
+          </div>
+        </div>
+      )}
+      {modalError && (
+        <div className={styles.modal}>
+          <div className={styles.overlay} onClick={toggleModalModalError}></div>
+          <div className={styles.modal_content}>
+            <span
+              className={styles.close_button}
+              onClick={toggleModalModalError}
+            >
+              X
+            </span>
+            <h2>Oops</h2>
+            <p>That user already exists.</p>
             <Link href="/landing">
               <button className={styles.btn_modal}>Go to Home Page</button>
             </Link>
@@ -323,8 +349,6 @@ function SignUp() {
             Ready to find your dream job? Discover companies from all over
             Israel
           </h3>
-        </div>
-        <div className={styles.cont_container}>
           <div className={styles.auth_cont}>
             {!googleData ? (
               <GoogleLoginButton
@@ -335,9 +359,14 @@ function SignUp() {
               <div className={styles.logOff}>
                 <span>
                   Hello {googleData.displayName}, if you do not want to log in
-                  with google
+                  with Google
                 </span>
-                <button onClick={() => logout()}>click here</button>
+                <button
+                  className={styles.buttonLogOff}
+                  onClick={() => logout()}
+                >
+                  Click here
+                </button>
               </div>
             )}
           </div>

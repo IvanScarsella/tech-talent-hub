@@ -11,7 +11,7 @@
   flex-direction: column;
 }
 
-.email{
+.email {
   width: 100%;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .labelInput {
-  font-family: "Roboto Regular" ;
+  font-family: "Roboto Regular";
   font-style: black;
   font-size: 18px;
 }
@@ -108,6 +108,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -123,6 +124,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
+  justify-content: center;
   line-height: 28px;
   cursor: pointer;
   opacity: 0.5;
@@ -194,7 +196,7 @@
 }
 
 /* LOADER */
-.loaderContainer{
+.loaderContainer {
   margin-top: 7em;
   margin-bottom: 7em;
   display: flex;
@@ -236,5 +238,40 @@
 @keyframes spinner-e04l1k {
   100% {
     transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 600px) {
+  .LogInContainer {
+    margin-left: 1em;
+    margin-right: 1em;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .InputsLogIn,
+  .email,
+  .inPutsContainer {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .input,
+  .ButtonSignIn,
+  .ButtonB,
+  .ButtonD {
+    width: 100%;
+  }
+
+  .imagenContenedor {
+    display: none;
   }
 }

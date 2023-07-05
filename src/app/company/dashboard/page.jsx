@@ -24,16 +24,17 @@ function DashboardPage() {
 
   //? USE STATE LOADER
 
-  console.log(users);
+  // console.log(users);
 
   useEffect(() => {
     const localStorageData = localStorage.getItem("companyData");
     if (localStorageData) {
       const companyDataFromStorage = JSON.parse(localStorageData);
       setCompanyData(companyDataFromStorage);
-    } else {
-      console.log("No data in localStorage");
-    }
+    } 
+    // else {
+    //   console.log("No data in localStorage");
+    // }
   }, []);
 
   return (

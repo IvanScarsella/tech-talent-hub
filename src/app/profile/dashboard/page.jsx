@@ -32,7 +32,7 @@ function HomePage() {
 
   return (
     <div className={styles.globalContainer}>
-      <div className={styles.botonContenedor}>
+      <div className={styles.tituloContenedor}>
         {user && <Hi user={user} />}
         <SearchBar setSearchValue={setSearchValue} /> <br />
         {user && user.superAdmin && (

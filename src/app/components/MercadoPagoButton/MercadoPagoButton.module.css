@@ -55,7 +55,25 @@
   font-family: "Roboto Regular";
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 13.4px;
+}
+
+.FreePlanButton{
+  background: #7255d96c;
+  box-shadow: 2px 2px 4px #00000040;
+  border-radius: 15px;
+  border: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
   cursor: pointer;
   line-height: 28px;
 }
@@ -166,4 +184,8 @@ body.active-modal {
   max-width: 600px;
   min-width: 300px;
   z-index: 2000;
+}
+
+.remainingDays{
+  font-size: 12px;
 }

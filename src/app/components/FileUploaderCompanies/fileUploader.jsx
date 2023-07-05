@@ -47,7 +47,7 @@ const FileUploader = ({ companyId }) => {
 
           if (uploadResponse.ok) {
             const jsonResponse = await uploadResponse.json();
-            console.log("Archivo subido con éxito:", jsonResponse.url);
+            // console.log("Archivo subido con éxito:", jsonResponse.url);
 
             const logo_Company = jsonResponse.url;
 
@@ -66,7 +66,7 @@ const FileUploader = ({ companyId }) => {
               setShowModalOK(true);
 
               const jsonResponse = await apiResponse.json();
-              console.log("Company logo updated successfully:", jsonResponse);
+              // console.log("Company logo updated successfully:", jsonResponse);
             } else {
               setShowModalError(true);
 

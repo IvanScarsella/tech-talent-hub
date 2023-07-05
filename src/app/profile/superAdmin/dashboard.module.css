@@ -4,9 +4,11 @@
 
 .containerGraphAcc {
   display: flex;
+  justify-content: center;
   flex-direction: row-reverse;
   gap: 20px;
   padding: 20px;
+  margin-left: 70px;
 }
 
 .containerGraph {

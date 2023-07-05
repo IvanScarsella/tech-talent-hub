@@ -1,71 +1,86 @@
 /* LOADER */
 
 .loaderContainer {
-    display: flex;
-    width: 500px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 150px;
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
 }
 
 .spinner {
-    width: 56px;
-    height: 56px;
-    display: grid;
-    border: 4.5px solid #0000;
-    border-radius: 50%;
-    border-color: #dbdcef #0000;
-    animation: spinner-e04l1k 1s infinite linear;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  border: 4.5px solid #0000;
+  border-radius: 50%;
+  border-color: #dbdcef #0000;
+  animation: spinner-e04l1k 1s infinite linear;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    margin-bottom: 10rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-bottom: 10rem;
 }
 
-.text{
-    margin-bottom: 60px;
-    font-size: 35px;
-        font-family: "Merriweather";
+.text {
+  margin-bottom: 60px;
+  font-size: 35px;
+  font-family: "Merriweather";
 }
 
-.noVacanciesText{
-    font-family: "Roboto Regular";
-    font-size: 20px;
-color: black
+.noVacanciesText {
+  font-family: "Roboto Regular";
+  font-size: 20px;
+  color: black;
 }
 
-.noVacanciesContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
+.noVacanciesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
 }
 
 .spinner::before,
 .spinner::after {
-    content: "";
-    grid-area: 1/1;
-    margin: 2.2px;
-    border: inherit;
-    border-radius: 50%;
+  content: "";
+  grid-area: 1/1;
+  margin: 2.2px;
+  border: inherit;
+  border-radius: 50%;
 }
 
 .spinner::before {
-    border-color: #474bff #0000;
-    animation: inherit;
-    animation-duration: 0.5s;
-    animation-direction: reverse;
+  border-color: #474bff #0000;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
 }
 
 .spinner::after {
-    margin: 8.9px;
+  margin: 8.9px;
 }
 
 @keyframes spinner-e04l1k {
-    100% {
-        transform: rotate(1turn);
-    }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text {
+    margin-left: -2em;
+    font-size: 30px;
+  }
+  .ContenedorJobs {
+    margin-left: -2em;
+  }
 }

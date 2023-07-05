@@ -1,48 +1,56 @@
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+
 .ButtonB {
-    margin-top: 20px;
-    cursor: pointer;
-    background: #7155d9;
-    box-shadow: 2px 2px 4px #00000040;
-    border-radius: 15px;
-    width: 400px;
-    height: 53px;
-    border: none;
-    color: white;
-    font-family: "Roboto Regular";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding-left: 40px;
-    flex-direction: row-reverse;
+  margin-top: 20px;
+  cursor: pointer;
+  background: #7155d9;
+  box-shadow: 2px 2px 4px #00000040;
+  border-radius: 15px;
+  width: 500px;
+  height: 53px;
+  border: none;
+  color: white;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .ButtonD {
-    margin-top: 20px;
-    cursor: pointer;
-    background: #7155d9;
-    box-shadow: 2px 2px 4px #00000040;
-    border-radius: 15px;
-    width: 400px;
-    height: 53px;
-    border: none;
-    color: white;
-    font-family: "Roboto Regular";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding-left: 40px;
-    flex-direction: row-reverse;
-    opacity: 0.5;
+  margin-top: 20px;
+  cursor: pointer;
+  background: #7155d9;
+  box-shadow: 2px 2px 4px #00000040;
+  border-radius: 15px;
+  width: 500px;
+  height: 53px;
+  border: none;
+  color: white;
+  justify-content: center;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  opacity: 0.5;
 }
 
-.GoogleImage {
-    margin-right: 50px;
+.GoogleText{
+  font-family: 'Product Sans';
+  font-size: 1.5vw;
+  font-weight: bold;
 }

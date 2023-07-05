@@ -84,13 +84,13 @@
   width: 800px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .imageContainer {
     width: 100%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .imageContainer {
     display: none;
   }
@@ -115,14 +115,14 @@
   margin-top: 25px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .botonera {
     flex-direction: column;
     align-items: center;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .botonera {
     flex-direction: column;
     align-items: stretch;

@@ -75,3 +75,25 @@
     transform: rotate(1turn);
   }
 }
+
+@media (max-width: 600px) {
+  .image {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardClassName {
+    width: 90%;
+    margin: 5%;
+  }
+
+  .title {
+    font-size: 28px;
+    padding: 0 1rem;
+  }
+
+  .paragraph {
+    padding: 0 1rem;
+  }
+}

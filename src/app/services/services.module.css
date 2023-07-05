@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-      margin: 80px 0 40px 0;
+  margin: 80px 0 40px 0;
 }
 
 .plansContainer {
@@ -28,4 +28,25 @@
 .paragraph {
   font-size: 20px;
   margin-bottom: 70px;
+}
+
+@media (max-width: 600px) {
+  .ServicesContainer {
+    margin-left: 20px;
+  }
+
+  .plansContainer {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+    text-align: center;
+  }
 }

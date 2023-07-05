@@ -1,6 +1,6 @@
 export const plans = [
   {
-    title: "Option 1",
+    title: "Basic plan",
     subtitles: "Basic plan for entry-level access",
     type: 'basic',
     price: 1,
@@ -12,7 +12,7 @@ export const plans = [
     ],
   },
   {
-    title: "Option 2",
+    title: "Premium plan",
     subtitles: "Premium plan for comprehensive services",
     type: 'premium',
     price: 15,

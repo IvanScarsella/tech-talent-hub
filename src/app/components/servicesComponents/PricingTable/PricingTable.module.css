@@ -3,3 +3,17 @@
   flex-direction: row;
   gap: 100px;
 }
+
+.Container {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+@media (max-width: 600px) {
+  .Container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}

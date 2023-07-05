@@ -2,10 +2,18 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
-  console.log(req.query.q, '--------------------------------');    
   if (req.method === "GET") {
     const query = req.query.q;
-    const users = await prisma.user.findMany();
+    const users = await prisma.user.findMany({
+      where: {
+        isActive: true,
+        superAdmin: false, // solo obtener usuarios que no sean superAdmin
+      },
+      orderBy: [
+        { isPremium: "desc" },
+        // other fields to order by (if any)
+      ],
+    });
     
     const searchedUsers = [];
 

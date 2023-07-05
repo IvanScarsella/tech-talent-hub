@@ -1,212 +1,226 @@
 /* PAGE CONTAINER */
 .page_container {
-    display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
-
 body.active-modal {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 .btn_modal {
-    width: 96%;
-    height: 59px;
-    left: 265px;
-    top: 825px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    background: #7155d9;
-    box-shadow: 2px 2px 4px #00000040;
-    border-radius: 15px;
-    border: none;
-    color: white;
-    font-family: "Roboto Regular";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
-    transition: transform 0.5 ease;
+  width: 96%;
+  height: 59px;
+  left: 265px;
+  top: 825px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background: #7155d9;
+  box-shadow: 2px 2px 4px #00000040;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  transition: transform 0.5 ease;
 }
 
 .btn_modal:hover {
-    background: none;
-    border: solid;
-    border-color: #7155d9;
-    color: #7155d9;
-    transform: translateY(-3px);
-    cursor: pointer;
+  background: none;
+  border: solid;
+  border-color: #7155d9;
+  color: #7155d9;
+  transform: translateY(-3px);
+  cursor: pointer;
 }
 
 .ButtonB {
-    cursor: pointer;
-    background: #7155d9;
-        box-shadow: 2px 2px 4px #00000040;
-        border-radius: 15px;
-        width: 400px;
-        height: 53px;
-        border: none;
-        color: white;
-        font-family: "Roboto Regular";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: left;
-        padding-left: 40px;
-        flex-direction: row-reverse;
+  cursor: pointer;
+  background: #7155d9;
+  box-shadow: 2px 2px 4px #00000040;
+  border-radius: 15px;
+  width: 400px;
+  height: 53px;
+  border: none;
+  color: white;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 40px;
+  flex-direction: row-reverse;
 }
-
 
 .GoogleImage {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
-.cont_container{
-    display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 1200px;
+.cont_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
 }
 
-.auth_cont{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.auth_cont {
+  display: flex;
+  align-items: left;
+  justify-content: left;
 }
 
-.logOff {
-    margin-left: 15em;
+
+
+.logOff span {
+  font-size: 20px;
 }
+
 /* LOGO UPLOADER INPUT */
 .input_logo_Company::file-selector-button {
-    margin-right: 20px;
-    margin-top: 5px;
-    border: none;
-    background: #7155d9;
-    border: 3px solid #7155d9;
-    padding: 5px 20px;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
+  margin-right: 20px;
+  margin-top: 5px;
+  border: none;
+  background: #7155d9;
+  border: 3px solid #7155d9;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .input_logo_Company::file-selector-button:hover {
-    background: none;
-    color: #7155d9;
+  background: none;
+  color: #7155d9;
 }
 
 .modal,
 .overlay {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 1000;
 }
 
 .overlay {
-    background: rgba(49, 49, 49, 0.8);
+  background: rgba(49, 49, 49, 0.8);
 }
 
 .modal_content {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
-    background: #f1f1f1;
-    padding: 20px 35px;
-    border-radius: 3px;
-    max-width: 600px;
-    min-width: 300px;
-    z-index: 2000;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 20px 35px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+  z-index: 2000;
 }
 
+.modal_content h2 {
+  font-size: 23px;
+  font-family: "Merriweather";
+}
+
+.close_button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+}
 
 /* title */
 
 .titles_container {
-    margin-left: 330px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  margin-left: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
 }
 
 .title {
-    font-family: 'Merriweather';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 39px;
-    letter-spacing: -0.011em;
-    color: #000000;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 39px;
+  letter-spacing: -0.011em;
+  color: #000000;
+      width: 1200px;
 }
 
 /* required */
 .required {
-    color: red;
+  color: red;
 }
 
 /* subtitle */
 
 .subtitle {
-    font-family: 'Merriweather';
-    margin-top: -10px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    letter-spacing: -0.011em;
-    color: #000000;
+  font-family: "Merriweather";
+  margin-top: -10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.011em;
+  color: #000000;
+      width: 1200px;
 }
 
 .password_toggle_container {
-    position: relative;
+  position: relative;
 }
 
 .password_icon {
-    position: absolute;
-    top: 32%;
-    right: 12%;
-    cursor: pointer;
+  position: absolute;
+  top: 32%;
+  right: 12%;
+  cursor: pointer;
 }
 
-.upload_icon{
-    position: absolute;
-        top: 32%;
-        right: 12%;
-        cursor: pointer;
+.upload_icon {
+  position: absolute;
+  top: 32%;
+  right: 12%;
+  cursor: pointer;
 }
-
 
 /* divider */
 
 .divider {
-    width: 96%;
-    margin-bottom: 2rem;
+  width: 96%;
+  margin-bottom: 2rem;
 }
 
 .divider hr {
-    border: 2px solid black;
+  border: 2px solid black;
 }
 
 /* FORM */
 
 .form_container {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .form {
-    width: 1200px;
+  width: 1200px;
 }
 
 .name_container,
@@ -218,12 +232,11 @@ body.active-modal {
 .vacancies_container,
 .description_container,
 .employes_container,
-.jobs_container{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.jobs_container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
-
 
 /* labels */
 
@@ -237,15 +250,15 @@ body.active-modal {
 .description,
 .employes,
 .jobs {
-    width: 400px;
-    height: 22px;
-    font-family: 'Roboto Regular';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    letter-spacing: -0.011em;
-    color: #000000;
-    margin-bottom: 3px;
+  width: 400px;
+  height: 22px;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.011em;
+  color: #000000;
+  margin-bottom: 3px;
 }
 
 /* FILA 1 y 3 */
@@ -256,7 +269,7 @@ body.active-modal {
 .row5_container,
 .row6_container,
 .row7_container {
-    display: flex;
+  display: flex;
 }
 
 .name_container,
@@ -268,7 +281,7 @@ body.active-modal {
 .description_container,
 .employes_container,
 .jobs_container {
-    flex: 1;
+  flex: 1;
 }
 
 .input_name,
@@ -279,115 +292,268 @@ body.active-modal {
 .input_country,
 .input_description,
 .input_employes,
-.input_jobs{
-    width: 90%;
-    height: 50px;
-    padding-left: 10px;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 0.5px 0.5px 4px 0.5px;
-    font-size: 18px;
+.input_jobs {
+  width: 90%;
+  height: 50px;
+  padding-left: 10px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 0.5px 0.5px 4px 0.5px;
+  font-size: 18px;
 }
 
 /* FILA 2 */
 .input_email,
 .textarea_description {
-    width: 95%;
-    height: 50px;
-    padding-left: 10px;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 0.5px 0.5px 4px 0.5px;
-    font-size: 19px;
-    font-family: 'Roboto Regular';
-    font-style: normal;
+  width: 95%;
+  height: 50px;
+  padding-left: 10px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 0.5px 0.5px 4px 0.5px;
+  font-size: 19px;
+  font-family: "Roboto Regular";
+  font-style: normal;
 }
 
 .textarea_description {
-    height: 100px;
-    padding-top: 10px;
+  height: 100px;
+  padding-top: 10px;
 }
 
 .error_span {
-    color: rgb(201, 16, 16);
-    margin-top: 10px;
-    font-size: 17px;
+  color: rgb(201, 16, 16);
+  margin-top: 10px;
+  font-size: 17px;
 }
 
 /* button */
 
 .button {
-    width: 96%;
-    height: 59px;
-    left: 265px;
-    top: 825px;
-    margin-top: 20px;
-    margin-bottom: 80px;
-    background: #7155d9;
-    box-shadow: 2px 2px 4px #00000040;
-    border-radius: 15px;
-    border: none;
-    color: white;
-    font-family: "Roboto Regular";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
-    transition: transform 0.5 ease;
+  width: 96%;
+  height: 59px;
+  left: 265px;
+  top: 825px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  background: #7155d9;
+  box-shadow: 2px 2px 4px #00000040;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  transition: transform 0.5 ease;
 }
 
 .button:hover {
-    background: none;
-    border: solid;
-    border-color: #7155d9;
-    color: #7155d9;
-    transform: translateY(-3px);
-    cursor: pointer;
+  background: none;
+  border: solid;
+  border-color: #7155d9;
+  color: #7155d9;
+  transform: translateY(-3px);
+  cursor: pointer;
 }
 
 .button:disabled,
 .button[disabled],
 .button:disabled:hover {
-    background-color: #cccccc;
-    border-color: #666666;
-    color: #666666;
-    cursor: no-drop;
-    transition: none;
-    transform: none;
+  background-color: #cccccc;
+  border-color: #666666;
+  color: #666666;
+  cursor: no-drop;
+  transition: none;
+  transform: none;
 }
 
 /* footer */
 
 .footer {
-    display: flex;
-    margin-left: 320px;
-    gap: 20px
+  display: flex;
+  margin-left: 320px;
+  gap: 20px;
 }
 
 .footer_title {
-    width: 220px;
-    height: 25px;
-    left: calc(50% - 220px/2 - 68px);
-    top: 307px;
-    font-family: 'Merriweather';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 139%;
-    letter-spacing: -0.011em;
-    color: #000000;
+  width: 220px;
+  height: 25px;
+  left: calc(50% - 220px / 2 - 68px);
+  top: 307px;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 139%;
+  letter-spacing: -0.011em;
+  color: #000000;
 }
 
 .footer_login {
-    width: 107px;
-    height: 25px;
-    left: calc(50% - 107px/2 + 115.5px);
-    top: 307px;
-    font-family: 'Merriweather';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 139%;
-    letter-spacing: -0.011em;
-    color: #7155D9;
+  width: 107px;
+  height: 25px;
+  left: calc(50% - 107px / 2 + 115.5px);
+  top: 307px;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 139%;
+  letter-spacing: -0.011em;
+  color: #7155d9;
+}
+
+
+.buttonLogOff {
+  background: #7155d9;
+  box-shadow: 2px 2px 4px #00000040;
+  border-radius: 15px;
+  border: solid #7155d9;
+  color: white;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 8px 15px;
+  margin-left: 10px;
+}
+
+.buttonLogOff:hover {
+  background: none;
+  border-color: #7155d9;
+  color: #7155d9;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .ButtonB {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .titles_container,
+  .form {
+    margin-left: 0px;
+  }
+
+  .form_container,
+  .name_container,
+  .logo_Company_container,
+  .email_container,
+  .type_container,
+  .password_container,
+  .country_container,
+  .vacancies_container,
+  .description_container,
+  .employes_container,
+  .jobs_container {
+    flex-direction: column;
+  }
+
+  .titles_container{
+    align-items: center;
+    width: 500px;
+  }
+
+  .title{
+    width: 500px;
+    font-size: 32px;
+  }
+
+  .subtitle{
+    width: 500px;
+  }
+
+  .logOff{
+    margin-top: 20px;
+    width: 500px;
+    flex-direction: column;
+  }
+
+
+  .row1_container,
+  .row2_container,
+  .row3_container,
+  .row4_container,
+  .row5_container,
+  .row6_container,
+  .row7_container {
+    flex-direction: column;
+  }
+
+  .input_name,
+  .input_logo_Company,
+  .input_type,
+  .input_password,
+  .input_vacancies,
+  .input_country,
+  .input_description,
+  .input_employes,
+  .input_jobs {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .page_container,
+  .titles_container,
+  .form_container,
+  .form,
+  .row1_container,
+  .row2_container,
+  .row3_container,
+  .row4_container,
+  .row5_container,
+  .row6_container,
+  .row7_container,
+  .name_container,
+  .logo_Company_container,
+  .email_container,
+  .type_container,
+  .password_container,
+  .country_container,
+  .vacancies_container,
+  .description_container,
+  .employes_container,
+  .jobs_container {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ButtonB,
+  .button,
+  .input_name,
+  .input_logo_Company,
+  .input_type,
+  .input_password,
+  .input_vacancies,
+  .input_country,
+  .input_description,
+  .input_employes,
+  .input_jobs,
+  .input_email,
+  .password_toggle_container,
+  .textarea_description {
+    width: 100%;
+  }
+
+  .ButtonB {
+    padding-left: 10px;
+  }
+
+  .modal_content {
+    max-width: 90%;
+  }
+
+  .logOff {
+    margin-left: 0;
+  }
 }

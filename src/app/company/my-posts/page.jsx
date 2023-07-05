@@ -19,7 +19,7 @@ function MyPosts(props) {
   useEffect(() => {
     const localStorageData = localStorage.getItem("companyData");
     const parsedData = localStorageData ? JSON.parse(localStorageData) : null;
-    console.log("parsedData", parsedData);
+    // console.log("parsedData", parsedData);
 
     if (parsedData) {
       setCompanyData(parsedData);
@@ -28,7 +28,7 @@ function MyPosts(props) {
     }
   }, []);
 
-  console.log("companyData", companyData);
+  // console.log("companyData", companyData);
 
   return (
     <>
@@ -42,7 +42,7 @@ function MyPosts(props) {
             </p>
           </div>
           <div className={styles.content}>
-            <div>
+            <div className={styles.gapMobil}>
               <MyPostsCards companyId={companyId} />
               <FormMyPosts parsedData={companyData} />
             </div>

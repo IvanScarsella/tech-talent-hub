@@ -32,7 +32,7 @@ function TableVacancies({ jobs }) {
       const response = await axios.patch(`/api/vacancies/${vacancyId}`, {
         isActive: !currentStatus,
       });
-      console.log(response.data);
+      // console.log(response.data);
       updateJobStatus(vacancyId, !currentStatus);
     } catch (error) {
       console.error(error);
@@ -52,7 +52,7 @@ function TableVacancies({ jobs }) {
   const indexOfLastJob = currentPage * usersPerPage;
   const indexOfFirstJob = indexOfLastJob - usersPerPage;
   const currentJobs = sortedJobs.slice(indexOfFirstJob, indexOfLastJob);
-  console.log(currentJobs);
+  // console.log(currentJobs);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const requestSort = (key) => {

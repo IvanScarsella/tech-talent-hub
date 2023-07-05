@@ -101,13 +101,7 @@ function SuperDashboardAdmin() {
             </div>
           ) : (
             <>
-              <div className={styles.infoContainer}>
-                <InfoCard jobs={jobs} users={users} companies={companies} />
-                <RevenueChart
-                  users={users}
-                  className={styles.mercadopagoChart}
-                />
-              </div>
+              <InfoCard jobs={jobs} users={users} companies={companies} />
               <div className={styles.containerGraphAcc}>
                 <div className={styles.containerGraph}>
                   <BarcharCompany

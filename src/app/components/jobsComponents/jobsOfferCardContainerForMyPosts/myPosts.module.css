@@ -57,6 +57,11 @@
   color: #b682d9;
 }
 
+.p {
+  font-size: 1em;
+  margin: 0px 0px 100px 0px;
+}
+
 /* LOADER */
 
 .loaderContainer {
@@ -122,6 +127,20 @@
   animation: inherit;
   animation-duration: 0.5s;
   animation-direction: reverse;
+}
+
+.noVacanciesText {
+  font-family: "Roboto Regular";
+  font-size: 18px;
+  color: black;
+}
+
+.noVacanciesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .spinner::after {

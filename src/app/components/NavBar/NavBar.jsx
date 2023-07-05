@@ -95,6 +95,7 @@ const NavBar = () => {
             </Link>
           </button>
         </div>
+
         <Tooltip id="dashboard-users" place="right" />
         <Tooltip id="profile-users" place="right" />
         <Tooltip id="my-apps-users" place="right" />
@@ -146,6 +147,7 @@ const NavBar = () => {
             </Link>
           </button>
         </div>
+
         <Tooltip id="dashboard-companies" place="right" />
         <Tooltip id="profile-companies" place="right" />
         <Tooltip id="myposts-companies" place="right" />

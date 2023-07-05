@@ -159,8 +159,16 @@ function SignUp() {
 
   //? ISFORMCOMPLETE FUNCTION
   const isFormComplete = () => {
-    const { name, type, email, password, country, vacancies, employes, jobs } =
-      form;
+    const {
+      name,
+      type,
+      email,
+      password,
+      country,
+      vacancies,
+      employes,
+      jobs,
+    } = form;
     const {
       name: nameError,
       type: typeError,
@@ -223,6 +231,9 @@ function SignUp() {
         <div className={styles.modal}>
           <div className={styles.overlay} onClick={toggleModal}></div>
           <div className={styles.modal_content}>
+            <span className={styles.close_button} onClick={toggleModal}>
+              X
+            </span>
             <h2>Thank you for registering!</h2>
             <p>
               Please Log In to your account to start looking for the best
@@ -241,8 +252,6 @@ function SignUp() {
             Ready to find the best candidate for your company? We have the best
             IT talent pool of LatAm.
           </h3>
-        </div>
-        <div className={styles.cont_container}>
           <div className={styles.auth_cont}>
             {!googleData ? (
               <GoogleLoginButton
@@ -253,13 +262,19 @@ function SignUp() {
               <div className={styles.logOff}>
                 <span>
                   Hello {googleData.displayName}, if you do not want to log in
-                  with google
+                  with Google
                 </span>
-                <button onClick={() => logout()}>click here</button>
+                <button
+                  className={styles.buttonLogOff}
+                  onClick={() => logout()}
+                >
+                  Click here
+                </button>
               </div>
             )}
           </div>
         </div>
+
         <div className={styles.form_container}>
           <form className={styles.form} onSubmit={submitHandler}>
             <div className={styles.row1_container}>

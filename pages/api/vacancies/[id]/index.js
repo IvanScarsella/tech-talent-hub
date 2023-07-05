@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     }
   } else if (req.method === "PUT") {
     const { isActive } = req.body;
-    console.log(isActive);
+    // console.log(isActive);
     try {
       const updatedVacancy = await prisma.Vacancy.update({
         where: {
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     }
   } else if (req.method === "PATCH") {
     const { logo_Company, isActive } = req.body;
-    console.log(logo_Company);
+    // console.log(logo_Company);
     try {
       const updatedVacancy = await prisma.Vacancy.update({
         where: {

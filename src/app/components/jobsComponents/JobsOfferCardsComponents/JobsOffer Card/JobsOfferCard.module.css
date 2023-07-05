@@ -11,8 +11,22 @@
 }
 
 .Container:hover {
-  border-color: #6850BF;
+  border-color: #b682d9;
+  scale: 1.03;
+  transition: 0.3s;
 }
+.ContainerB {
+  border: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 9px;
+  border-color: black;
+  width: 525px;
+  height: 109px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .InfoContainer {
   display: flex;
   flex-direction: column;
@@ -44,6 +58,20 @@
   color: #000000;
   margin-top: 10px;
 }
+
+.company_logo {
+  width: 150px;
+  height: 38px;
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 139%;
+  letter-spacing: -0.011em;
+  color: #000000;
+  margin: 10px 0px 20px 0px;
+}
+
 .CompanyNameContainer {
   display: flex;
   gap: 6px;
@@ -80,14 +108,13 @@
   color: #b682d9;
 }
 
-.button_finish{
+.button_finish {
   color: white;
   font-weight: 400;
   font-size: 18px;
   background-color: #b682d9;
   cursor: pointer;
 }
-
 
 .contenedorButton {
   display: flex;
@@ -114,12 +141,31 @@
   justify-content: center;
 }
 
-.myapps{
-  color:#b682d9;
+
+.myapps {
+  color: #b682d9;
 }
 
-.myapps:hover{
-  text-decoration: underline;
-  color:#b682d9;
-  cursor: pointer;
+
+@media (max-width: 600px) {
+  .CompanyTitle {
+    font-size: 1.2em;
+    /* Ajusta el tamaño de fuente al que te parezca adecuado */
+  }
+
+  .span {
+    font-size: 15px; /* Ajusta el tamaño de fuente al que te parezca adecuado */
+  }
+
+  .button {
+    width: 100%; /* Esto hará que el botón sea un 80% del ancho del contenedor */
+    margin: 10px auto;
+    padding-left: 2em;
+    padding-right: 2em; /* Esto centrará el botón y le dará un margen superior e inferior de 10px */
+  }
+
+  .button_finish {
+    width: 80%; /* Esto hará que el botón sea un 80% del ancho del contenedor */
+    margin: 10px auto; /* Esto centrará el botón y le dará un margen superior e inferior de 10px */
+  }
 }

@@ -44,7 +44,7 @@ function Chatbot(props) {
     }
   };
 
-  console.log(jobs);
+  // console.log(jobs);
 
   if (loading) {
     return <Loading />;

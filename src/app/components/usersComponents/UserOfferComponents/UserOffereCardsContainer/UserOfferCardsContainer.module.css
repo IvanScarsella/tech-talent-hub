@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.contains{
+.contains {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,6 @@
   flex-direction: row;
   margin-top: 60px;
 }
-
 
 .scrollableList {
   position: relative;
@@ -28,17 +27,17 @@
 }
 
 .fixedBar {
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#b682d9;
+  background-color: #b682d9;
   height: 50px;
-width:554px;
+  width: 554px;
+  margin-top: -40px;
   /* Estilos adicionales de la barra fija */
 }
 
-.allCandidates{
+.allCandidates {
   text-transform: uppercase;
   font-size: 18px;
   color: white;
@@ -50,5 +49,65 @@ width:554px;
   color: gray;
   text-shadow: white;
   padding-left: 0;
-  margin-top: 50px;
+  margin-top: 35px;
+}
+
+@media screen and (max-width: 600px) {
+  .detail {
+    display: none;
+  }
+  .modal {
+    background-color: white;
+    stroke: none;
+    height: auto;
+    justify-content: center;
+    align-content: center;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    backdrop-filter: blur(5px); /* Crea el efecto de desenfoque */
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    z-index: 999; /* Asegúrate de que la capa de desenfoque esté en la parte superior */
+  }
+
+  .containerAll{
+    margin-top: 25px;
+  }
+
+    .closeButton {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: transparent;
+      color: black;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+}
+
+@media screen and (min-width: 601px) {
+  .detail {
+    display: block;
+  }
+  .modal {
+    display: none;
+  }
+  
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

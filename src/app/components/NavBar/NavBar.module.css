@@ -11,6 +11,8 @@
   justify-content: space-evenly;
   flex-direction: row;
   flex-direction: column;
+  top: 0;
+  z-index: 9999; /* Use a high value to ensure the navbar is on top of other elements */
 }
 
 .MenuContainer {
@@ -22,6 +24,7 @@
   gap: 3rem;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .NavbarCompanies {
@@ -51,5 +54,29 @@
 }
 
 .Icons:hover {
-  transform: scale(1.35); 
+  transform: scale(1.35);
+}
+
+.darkMode{
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .Navbar,
+  .NavbarCompanies {
+    flex-direction: row;
+    height: 70px;
+    width: 100%;
+    position: sticky;
+  }
+
+  .MenuContainer {
+    margin-top: 0;
+  }
+
+  .IconsContainer {
+    flex-direction: row;
+    gap: 3rem;
+  }
 }

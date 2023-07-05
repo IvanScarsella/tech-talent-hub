@@ -9,7 +9,7 @@ function toTitleCase(str) {
 
 function Hi({ user }) {
   const name = toTitleCase(user.name);
-  console.log(name);
+  // console.log(name);
   return (
     <div>
       <a href="./mydata" className={styles.nstyle}>

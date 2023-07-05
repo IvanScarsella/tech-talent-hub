@@ -61,7 +61,7 @@ function TableUsers({ users }) {
       const response = await axios.patch(`/api/users/${userId}`, {
         isActive: !currentStatus, // invertir el estado actual
       });
-      console.log(response.data);
+      // console.log(response.data);
       updateUserStatus(userId, !currentStatus);
     } catch (error) {
       console.error(error);

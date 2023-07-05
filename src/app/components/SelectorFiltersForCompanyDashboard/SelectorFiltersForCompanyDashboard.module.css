@@ -1,9 +1,16 @@
-.selectorsContainer {
-  margin-top: 20px;
+.allFilters{
   display: flex;
-  justify-content: space-evenly;
-  margin-left: 200px;
-  margin-right: 200px;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectorsContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  
 }
 
 .selectors {
@@ -16,4 +23,24 @@
   border-top-width: 0.5px;
   border-left-width: 0.5px;
   border-right-width: 0.5px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .allFilters{
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .selectorsContainer{
+    gap:10px;
+    margin-top: 10px;
+  }
+
+  .selectors{
+    width: 260px;
+    align-items: center;
+    justify-content: center;
+  }
 }

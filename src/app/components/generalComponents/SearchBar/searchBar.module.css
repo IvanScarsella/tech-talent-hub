@@ -33,3 +33,11 @@
   width: 22.73px;
   height: 22.75px;
 }
+
+@media screen and (max-width: 600px) {
+ .searchBarContainer{
+  width: 100%;
+  flex-direction: column;
+  padding-top: 10px;
+ }
+}

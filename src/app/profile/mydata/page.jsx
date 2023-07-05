@@ -37,8 +37,8 @@ function MyProfileUsers() {
     const storedUserData = JSON.parse(localStorage.getItem("userData"));
     const userId = storedUserData?.id;
     setUserId(userId);
-    console.log(`User ID from localStorage: ${userId}`);
-    console.log(localStorage.userData);
+    // console.log(`User ID from localStorage: ${userId}`);
+    // console.log(localStorage.userData);
 
     // Fetch user data
     const fetchUserData = async () => {
@@ -47,7 +47,7 @@ function MyProfileUsers() {
         setUserData(response.data);
 
         // Log the data
-        console.log("Fetched user data:", response.data);
+        // console.log("Fetched user data:", response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -70,7 +70,7 @@ function MyProfileUsers() {
         setDeactivationError(true);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setDeactivationError(true);
     }
   };
@@ -163,10 +163,9 @@ function MyProfileUsers() {
             continue enjoying the premium benefits!
           </h3>
         ) : null}
-        <hr />
         <Services />
         <div className={styles.deactivateContainer}>
-          <hr />
+          <hr className={styles.divider} />
           <h3 className={styles.deactivateTitle}>Deactivate your account</h3>
           <p className={styles.p}>
             Don't worry! You can come back anytime you want - we will keep your

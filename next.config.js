@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["images.unsplash.com", "plus.unsplash.com", "http2.mlstatic.com"],
+    domains: ["images.unsplash.com", "plus.unsplash.com", "http2.mlstatic.com", "berlingamescene.com", "res.cloudinary.com", "www.freepnglogos.com"],
   },
   env: {
     URL_DEPLOY: process.env.URL_DEPLOY,

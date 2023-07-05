@@ -15,7 +15,9 @@ export default async function handler(req, res) {
 }
 
 async function getUsers(progLanguage, seniority, softSkill, specialization) {
-  let where = {};
+  let where = {
+    superAdmin: false,
+  };
   if (progLanguage) {
     where.progLanguages = {
       has: progLanguage,

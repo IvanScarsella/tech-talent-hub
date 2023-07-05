@@ -20,7 +20,7 @@ const MyApplicationsCards = () => {
             job.applicants.some((applicant) => applicant.id === user.id)
           );
           setJobs(filteredJobs);
-          console.log(jobs); // Agrega esta línea
+          // console.log(jobs); // Agrega esta línea
           setIsLoading(false);
         })
         .catch((error) => {
@@ -49,7 +49,7 @@ const MyApplicationsCards = () => {
               </p>
             </div>
           ) : (
-            <div>
+            <div className={styles.ContenedorJobs}>
               {jobs.map((job, index) => {
                 const companyName = job.company && job.company.name;
                 return (
@@ -64,6 +64,7 @@ const MyApplicationsCards = () => {
                     onJobSelected={() => {}}
                     applicants={`${job.applicants.length} candidates applied`}
                     status={job.status}
+                    seniority={job.seniority}
                   />
                 );
               })}

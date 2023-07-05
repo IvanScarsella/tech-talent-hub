@@ -1,14 +1,19 @@
 .container {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 60px;
+  margin: 30px 0;
+  /* display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 1rem;
   gap: 1rem;
   padding: 0rem;
-  place-items: center;
+  place-items: center; */
 }
 .card {
-  grid-column-start: span 1;
-  grid-column-end: span 2;
+  /* grid-column-start: span 1;
+  grid-column-end: span 2; */
   background-color: #262626;
   display: block;
   padding: 1em;

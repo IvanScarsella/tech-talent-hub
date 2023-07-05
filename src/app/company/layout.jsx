@@ -74,7 +74,7 @@ export default function Layout({ children }) {
       }
 
       try {
-        console.log(selectedSpecialization);
+        // console.log(selectedSpecialization);
         const response = await axios.get(url, { params });
         setUsers(response.data);
         setIsLoading(false);

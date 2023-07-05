@@ -1,7 +1,7 @@
 import transporter from "..";
 
 export default async function sendConnectRequest(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   const { method } = req;
 
   if (method == "POST") {

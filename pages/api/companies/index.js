@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         employes,
         googleAuth,
       } = req.body;
-      console.log(googleAuth);
+      // console.log(googleAuth);
       const companyEmail = email;
 
       const exist = await prisma.company.findUnique({
@@ -45,14 +45,14 @@ export default async function handler(req, res) {
       const mail = {
         from: "equipo3.37a@gmail.com",
         to: companyEmail,
-        subject: "Registro exitoso",
+        subject: "Successful registration",
         html: `
           <p style="color: black">
-          Mail de prueba a ${email}
+          Welcome ${newCompany.name}! Your TechTalentHub account has been successfully created!
           </p>
           `,
       };
-      console.log(mail);
+      // console.log(mail);
       await transporter.sendMail(mail);
 
       return res.status(201).json(newCompany);

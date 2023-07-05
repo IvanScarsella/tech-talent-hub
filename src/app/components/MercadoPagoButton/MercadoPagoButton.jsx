@@ -1,23 +1,20 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import styles from "../MercadoPagoButton/MercadoPagoButton.module.css";
 import { Loader } from "../Loader/Loader";
 import Link from "next/link";
 import axios from "axios";
-import { GlobalContext } from "../../profile/layout";
 import { useRouter } from "next/navigation";
-
+import { useSearchParams } from "next/navigation";
 export const MercadoPagoButton = ({ plan, section }) => {
   const [url, setUrl] = useState("/loginpro");
   const [isPremium, setIsPremium] = useState(false);
   const [loading, setLoading] = useState(true);
-  // const [landing, setLanding] = useState(false)
   const router = useRouter();
 
   // Check for window
   const isBrowser = typeof window !== "undefined";
-  const storedUserData = isBrowser
+  let storedUserData = isBrowser
     ? JSON.parse(localStorage.getItem("userData"))
     : null;
 
@@ -58,18 +55,38 @@ export const MercadoPagoButton = ({ plan, section }) => {
           });
           setUrl(data.url);
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
         setLoading(false);
       };
 
       generateLink();
-
-      setIsPremium(storedUserData.isPremium);
       // actualPlan = storedUserData.isPremium
     }
   }, [plan]);
 
+  //? Upgrade with Mercado pago
+  const searchParams = useSearchParams();
+  const paymentId = searchParams.get("payment_id");
+  useEffect(() => {
+    const updatePremium = async (data) => {
+      const paymentData = {
+        topic: "payment",
+        paymentId: paymentId,
+        userId: data.id,
+      };
+      const response = (await axios.post("/api/notify", paymentData)).data;
+      if (response.message === "UPGRADE SUCCESSFULL!") {
+        setIsPremium(true);
+        const userData = JSON.stringify(response.userData);
+        localStorage.removeItem("userData");
+        localStorage.setItem("userData", JSON.stringify(userData));
+        storedUserData = JSON.parse(localStorage.getItem("userData"));
+      }
+    };
+    if (paymentId && isPremium === false) updatePremium(storedUserData);
+  }, []);
+  //? Downgrade
   const downgradeAccount = async () => {
     const { data } = await axios.post("/api/downgradeAccount", {
       userId: storedUserData.id,
@@ -77,13 +94,11 @@ export const MercadoPagoButton = ({ plan, section }) => {
 
     if (data.message === "success") {
       router.push("/landing");
-      console.log("success");
+      // console.log("success");
     } else {
       alert("tu cuenta no se pudo actualizar al plan básico");
     }
   };
-
-  console.log(storedUserData);
 
   const renderButton = () => {
     if (section === "landing") {
@@ -120,7 +135,11 @@ export const MercadoPagoButton = ({ plan, section }) => {
               className={styles.mercadoPagoButtonDisabled}
               disabled
             >
-              Already subscribed to {plan.type}
+              Already subscribed
+              <br />
+              <span className={styles.remainingDays}>
+                Remaining days: {storedUserData.remainingDays}
+              </span>
             </button>
           );
         } else {
@@ -154,10 +173,10 @@ export const MercadoPagoButton = ({ plan, section }) => {
           return (
             <button
               id="mercadoPagoButton"
-              className={styles.mercadoPagoButtonDisabled}
+              className={styles.FreePlanButton}
               disabled
             >
-              Already Subscribed to {plan.type}
+              Already Subscribed
             </button>
           );
         }
@@ -172,7 +191,9 @@ export const MercadoPagoButton = ({ plan, section }) => {
         <div className={styles.modal}>
           <div className={styles.overlay} onClick={toggleModal}></div>
           <div className={styles.modal_content}>
-            <h2>Are you sure you want to downgrade your account to basic plan?</h2>
+            <h2>
+              Are you sure you want to downgrade your account to basic plan?
+            </h2>
             <div className={styles.modal_buttons}>
               <button className={styles.btn_modal1} onClick={downgradeAccount}>
                 Confirm

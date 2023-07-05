@@ -36,14 +36,14 @@ function MyProfileCompanies() {
     const storedCompanyData = JSON.parse(localStorage.getItem("companyData"));
     const companyId = storedCompanyData?.id; // Cambio aquí de userId a id
     setCompanyId(companyId);
-    console.log(`Company ID from localStorage: ${companyId}`);
+    // console.log(`Company ID from localStorage: ${companyId}`);
   }, []);
 
   useEffect(() => {
     const storedCompanyData = JSON.parse(localStorage.getItem("companyData"));
     const companyId = storedCompanyData?.id;
     setCompanyId(companyId);
-    console.log(`Company ID from localStorage: ${companyId}`);
+    // console.log(`Company ID from localStorage: ${companyId}`);
 
     const fetchCompanyData = async () => {
       try {
@@ -71,7 +71,7 @@ function MyProfileCompanies() {
         setDeactivationError(true);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setDeactivationError(true);
     }
   };

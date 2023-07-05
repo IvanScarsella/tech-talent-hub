@@ -52,7 +52,7 @@ const FileUploader = ({ userId }) => {
 
             if (patchResponse.ok) {
               setShowModalOK(true);
-              console.log("CV actualizado con éxito");
+              // console.log("CV actualizado con éxito");
             } else {
               setShowModalError(true);
               console.error(

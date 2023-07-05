@@ -3,7 +3,7 @@ import transporter from "..";
 export default async function register(req, res) {
   const { method } = req;
   if (method == "POST") {
-      console.log(req);
+      // console.log(req);
     const { email } = req.body;
     // const  email  = 'scarsellaivan@gmail.com';
     // console.log(req.method);
@@ -12,15 +12,15 @@ export default async function register(req, res) {
       const mail = {
         from: 'equipo3.37a@gmail.com',
         to: email,
-        subject: "Registro exitoso",
+        subject: "Successful registration",
         html: `
         <p style="color: black">
-        Mail de prueba a ${email}
+        Welcome ! Your TechTalentHub account has been successfully created!
         </p>
         `,
       };
       await transporter.sendMail(mail);
-      console.log(mail);
+      // console.log(mail);
       res.status(200).json({
         Message: `Se ha enviado un correo electrónico de prueba a ${email} `,
       });

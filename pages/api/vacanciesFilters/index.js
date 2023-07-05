@@ -3,11 +3,11 @@ const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   const paramsFilters = req.query;
-  console.log("Incoming query parameters: ", paramsFilters);
+  // console.log("Incoming query parameters: ", paramsFilters);
   if (req.method === "GET") {
     try {
       const vacancies = await getVacancies(paramsFilters);
-      console.log("Vacancies found: ", vacancies.length);
+      // console.log("Vacancies found: ", vacancies.length);
       res.status(200).json(vacancies);
     } catch (error) {
       console.error("Error while retrieving vacancies: ", error);
@@ -46,7 +46,7 @@ async function getVacancies(paramsFilters) {
     };
   }
 
-  console.log("Query condition: ", where);
+  // console.log("Query condition: ", where);
 
   const vacancies = await prisma.vacancy.findMany({
     where,
@@ -56,7 +56,7 @@ async function getVacancies(paramsFilters) {
     },
   });
 
-  console.log("Query result: ", vacancies);
+  // console.log("Query result: ", vacancies);
 
   return vacancies;
 }

@@ -11,6 +11,7 @@ import { validation } from "../../helpers/putCompanies/validation";
 import "react-datepicker/dist/react-datepicker.css";
 import { countries, type } from "../../helpers/signup-companies/variables";
 import styles from "./putCompanies.module.css";
+import useWindowSize from "../../helpers/windowsSize";
 
 const PutCompanies = ({ companyData }) => {
   //? USE STATE FORM
@@ -84,7 +85,7 @@ const PutCompanies = ({ companyData }) => {
       errors,
       setErrors
     );
-    console.log(form);
+    // console.log(form);
   };
 
   //? USE EFFECT - SEND INFO TO VALIDATION.JS
@@ -105,6 +106,8 @@ const PutCompanies = ({ companyData }) => {
       })
       .catch((err) => ({ error: err.message }));
   };
+
+  const { width } = useWindowSize();
 
   return (
     <>
@@ -152,7 +155,7 @@ const PutCompanies = ({ companyData }) => {
                           borderColor: "black",
                           borderWidth: "0.5px 0.5px 4px 0.5px",
                           fontSize: 18,
-                          width: "93%",
+                          width: width <= 600 ? "40%" : "93%",
                         }),
                         control: (baseStyles, state) => ({
                           ...baseStyles,
@@ -205,7 +208,7 @@ const PutCompanies = ({ companyData }) => {
                           borderColor: "black",
                           borderWidth: "0.5px 0.5px 4px 0.5px",
                           fontSize: 18,
-                          width: "93%",
+                          width: width <= 600 ? "40%" : "93%",
                         }),
                         control: (baseStyles, state) => ({
                           ...baseStyles,

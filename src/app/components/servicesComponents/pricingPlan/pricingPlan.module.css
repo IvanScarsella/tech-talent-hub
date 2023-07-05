@@ -14,7 +14,7 @@
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 900;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 139%;
   /* or 44px */
 
@@ -42,7 +42,7 @@
 
 .prices {
   width: 159px;
-  height: 133px;
+  /* height: 133px; */
   margin-top: -60px;
   font-family: "Merriweather";
   font-style: normal;

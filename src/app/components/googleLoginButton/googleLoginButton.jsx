@@ -32,20 +32,15 @@ export async function loggingGoogle(setGoogleData) {
 export function GoogleLoginButton({ pathname, setGoogleData, isDisabled }) {
   const textButton =
     pathname.includes("signupusers") || pathname.includes("signupcompanies")
-      ? "Join with Google"
-      : "Login with Google";
+      ? "Join with"
+      : "Login with";
   return (
     <button
       className={isDisabled ? styles.ButtonD : styles.ButtonB}
       onClick={() => loggingGoogle(setGoogleData)}
       disabled={isDisabled}
     >
-      {textButton}
-      <Image
-        src={google}
-        alt="image"
-        className={styles.GoogleImage}
-      ></Image>{" "}
+      {textButton}&nbsp;<span className={styles.GoogleText}>Google</span>
     </button>
   );
 }

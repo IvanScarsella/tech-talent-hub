@@ -9,7 +9,9 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const JobsLanding = () => {
+/* const jobs = jobsTemplate;
+ */
+const JobsLanding = ({ section }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,12 +20,12 @@ const JobsLanding = () => {
     axios
       .get("api/vacancies")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setJobs(res.data);
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setLoading(false);
       });
   }, []);
@@ -44,7 +46,7 @@ const JobsLanding = () => {
             </div>
           ) : (
             <div className={styles.JobsContainer}>
-              <JobsOfferCardsContainer jobs={jobs} />
+              <JobsOfferCardsContainer jobs={jobs} section={section} />
             </div>
           )}
           <div className={styles.ImageContainer}></div>

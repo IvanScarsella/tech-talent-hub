@@ -11,9 +11,9 @@ export default async function handler(req, res) {
 
     const userVacancies = user.appliedVacancies;
 
-    console.log(
-      `User ${userId} has ${user.limitFreeVacancies} free vacancies left`
-    );
+    // console.log(
+    //   `User ${userId} has ${user.limitFreeVacancies} free vacancies left`
+    // );
 
     if (userVacancies.some((vacancy) => vacancy.id === jobId)) {
       return res.status(403).json({
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       });
     } else {
       if (user.limitFreeVacancies === 0) {
-        return res.status(403).json({
+        return res.status(409).json({
           success: false,
           message:
             "You've reached the maximum number of free applications this day. Please wait until tomorrow to apply again.",
@@ -48,9 +48,9 @@ export default async function handler(req, res) {
           },
         });
 
-        console.log(
-          `User ${userId} now has ${result.limitFreeVacancies} free vacancies left`
-        );
+        // console.log(
+        //   `User ${userId} now has ${result.limitFreeVacancies} free vacancies left`
+        // );
 
         return res.json({
           success: true,

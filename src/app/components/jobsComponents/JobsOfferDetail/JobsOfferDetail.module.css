@@ -144,6 +144,16 @@
   margin-right: 15px;
 }
 
+.techTitle {
+  text-transform: uppercase;
+  font-family: "Roboto Regular", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: -0.011em;
+  color: #6850bf;
+  margin-right: 15px;
+}
+
 .buttonLike {
   background-color: #6850bf;
   border-style: none;
@@ -352,4 +362,64 @@ body.active-modal {
   max-width: 600px;
   min-width: 300px;
   z-index: 2000;
+}
+
+@media screen and (max-width: 600px) {
+  .ContainerDetail {
+    height: auto;
+    width: 80%;
+    margin-right: 50px;
+  }
+
+  .CompanyNameContainer{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .subtitleContainer{
+    width: 80%;
+    margin-left: 20px;
+  }
+
+  .contenedorSalary{
+    margin: 20 0;
+  }
+
+  .contenedorDescription span{
+    text-align: justify;
+    padding-right: 70px;
+  }
+
+  .aboutme {
+    width: 85%;
+  }
+
+  .listados {
+    width: 95%;
+    gap: 20px
+  }
+
+  .buttonContainer {
+    width: 98%;
+  }
+
+  .button{
+    justify-content: left;
+    align-items: left;
+    width: 95%;
+    padding: 15px 15px;
+    margin-bottom: 30px;
+  }
+
+  .ul_programming,
+  .ul_softskills {
+    width: auto;
+  }
+
+  .ul_programming li,
+  .ul_softskills li {
+    font-size: 14px;
+    max-width: 120px;
+    word-wrap: break-word;
+  }
 }

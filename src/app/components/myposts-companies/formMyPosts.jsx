@@ -36,7 +36,7 @@ const FormMyPosts = ({ parsedData }) => {
     Relevance: "GLOBAL",
     companyId: parsedData && parsedData.id,
   });
-  console.log("hola", parsedData);
+  // console.log("hola", parsedData);
   //? USE STATE FORM
   const [errors, setErrors] = useState({
     name_Vacancy: "",
@@ -123,7 +123,7 @@ const FormMyPosts = ({ parsedData }) => {
       setValid,
       isFormComplete
     );
-    console.log(form);
+    // console.log(form);
   };
 
   //? ISFORMCOMPLETE FUNCTION
@@ -173,7 +173,7 @@ const FormMyPosts = ({ parsedData }) => {
   const submitHandler = (event) => {
     event.preventDefault();
     // setForm(form);
-    console.log(form);
+    // console.log(form);
     axios
       .post("/api/vacancies", form)
       .then((response) => {

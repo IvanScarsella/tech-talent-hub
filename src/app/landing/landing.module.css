@@ -4,3 +4,14 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.hideOnMobile {
+  display: none;
+}
+
+/* Media query to show the component on larger screens */
+@media (min-width: 601px) {
+  .hideOnMobile {
+    display: flex;
+  }
+}

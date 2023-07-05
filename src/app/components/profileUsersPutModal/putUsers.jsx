@@ -145,7 +145,7 @@ const PutUsers = ({ userData }) => {
       errors,
       setErrors
     );
-    console.log(form);
+    // console.log(form);
   };
 
   //? USE EFFECT - SEND INFO TO VALIDATION.JS

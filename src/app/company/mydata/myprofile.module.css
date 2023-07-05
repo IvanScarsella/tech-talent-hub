@@ -14,9 +14,9 @@
   margin-top: 30px;
 }
 
-.title{
+.title {
   font-size: 40px;
-      font-family: "Merriweather";
+  font-family: "Merriweather";
 }
 
 .p {
@@ -97,7 +97,7 @@
 .deactivateTitle {
   padding-top: 20px;
   font-size: 35px;
-      font-family: "Merriweather";
+  font-family: "Merriweather";
 }
 
 .deactivateButton {
@@ -187,7 +187,6 @@ body.active-modal {
   transition: transform 0.5 ease;
 }
 
-
 /* BOTON MODAL2 */
 .btn_modal2 {
   width: 45%;
@@ -209,7 +208,6 @@ body.active-modal {
   line-height: 28px;
   transition: transform 0.5 ease;
 }
-
 
 .modal,
 .overlay {
@@ -239,4 +237,69 @@ body.active-modal {
   max-width: 600px;
   min-width: 300px;
   z-index: 2000;
+}
+
+@media (max-width: 600px) {
+  .page_container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .title_container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .content_container {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+  .fileUploader_container {
+    margin-left: -4em;
+  }
+  .modifyInfo_container,
+  .fileUploader_container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .deactivateContainer {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .deactivateButton {
+    width: 89%;
+  }
+
+  .button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .btn_modal,
+  .btn_modal1,
+  .btn_modal2 {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .modal_content h2 {
+    font-size: 20px;
+  }
+
+  .modal_content p {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .p {
+    font-size: 16px;
+  }
 }

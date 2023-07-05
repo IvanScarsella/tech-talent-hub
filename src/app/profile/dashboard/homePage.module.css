@@ -110,10 +110,33 @@
   }
 }
 
-.botonContenedor {
+.tituloContenedor {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
   align-items: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+  .globalContainer {
+    flex-direction: column;
+    padding-right: 10px;
+    overflow-x: hidden;
+  }
+
+  .forniculo,
+  .usersContainer,
+  .jobsContainer {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .tituloContenedor {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
 }

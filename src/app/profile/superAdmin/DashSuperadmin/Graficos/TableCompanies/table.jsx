@@ -43,7 +43,7 @@ function TableCompanies({ companies }) {
       const response = await axios.patch(`/api/companies/${companyId}`, {
         isActive: !currentStatus,
       });
-      console.log(response.data);
+      // console.log(response.data);
       updateCompanyStatus(companyId, !currentStatus);
     } catch (error) {
       console.error(error);
