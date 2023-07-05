@@ -77,8 +77,6 @@ body.active-modal {
   justify-content: left;
 }
 
-
-
 .logOff span {
   font-size: 20px;
 }
@@ -147,7 +145,7 @@ body.active-modal {
 /* title */
 
 .titles_container {
-  margin-left: 330px;
+  margin-left: 16em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,7 +159,7 @@ body.active-modal {
   font-size: 39px;
   letter-spacing: -0.011em;
   color: #000000;
-      width: 1200px;
+  width: 1200px;
 }
 
 /* required */
@@ -179,7 +177,7 @@ body.active-modal {
   font-size: 18px;
   letter-spacing: -0.011em;
   color: #000000;
-      width: 1200px;
+  width: 1200px;
 }
 
 .password_toggle_container {
@@ -405,7 +403,6 @@ body.active-modal {
   color: #7155d9;
 }
 
-
 .buttonLogOff {
   background: #7155d9;
   box-shadow: 2px 2px 4px #00000040;
@@ -427,7 +424,6 @@ body.active-modal {
   transform: translateY(-3px);
   cursor: pointer;
 }
-
 
 @media only screen and (max-width: 600px) {
   .ButtonB {
@@ -454,26 +450,25 @@ body.active-modal {
     flex-direction: column;
   }
 
-  .titles_container{
+  .titles_container {
     align-items: center;
     width: 500px;
   }
 
-  .title{
+  .title {
     width: 500px;
     font-size: 32px;
   }
 
-  .subtitle{
+  .subtitle {
     width: 500px;
   }
 
-  .logOff{
+  .logOff {
     margin-top: 20px;
     width: 500px;
     flex-direction: column;
   }
-
 
   .row1_container,
   .row2_container,
