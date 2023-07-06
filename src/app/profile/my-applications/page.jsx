@@ -6,6 +6,7 @@ import Image from "next/image";
 import MyApplicationsCards from "../../components/jobsComponents/jobsOfferCardContainerForMyApplications/myApplicationsCards";
 import { GlobalContext } from "../layout";
 import { getLayout } from "../layout";
+import { useEffect } from "react";
 
 function MyApplications() {
   useEffect(() => {
