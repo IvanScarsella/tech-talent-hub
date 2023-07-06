@@ -2,22 +2,20 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import JobsOfferCard from "../JobsOfferCardsComponents/JobsOffer Card/JobsOfferCard";
 import Link from "next/link";
-import { GlobalContext } from "../../../profile/layout"; // Asegúrate de que esta ruta es correcta
 import styles from "./myApplications.module.css";
 
-const MyApplicationsCards = () => {
+const MyApplicationsCards = ({userId}) => {
   const [jobs, setJobs] = useState([]);
-  const { user } = useContext(GlobalContext); // Accede al user del contexto global
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (user && user.id) {
+    if (userId) {
       axios
         .get("/api/vacancies")
         .then((response) => {
           const jobsFromServer = response.data;
           const filteredJobs = jobsFromServer.filter((job) =>
-            job.applicants.some((applicant) => applicant.id === user.id)
+            job.applicants.some((applicant) => applicant.id === userId)
           );
           setJobs(filteredJobs);
           // console.log(jobs); // Agrega esta línea
@@ -27,7 +25,7 @@ const MyApplicationsCards = () => {
           console.error("Error fetching jobs:", error);
         });
     }
-  }, [user]); // Actualiza la llamada a la API cada vez que el user cambia
+  }, []); // Actualiza la llamada a la API cada vez que el user cambia
 
   return (
     <div className={styles.container}>

@@ -6,10 +6,9 @@ import Image from "next/image";
 import MyApplicationsCards from "../../components/jobsComponents/jobsOfferCardContainerForMyApplications/myApplicationsCards";
 import { GlobalContext } from "../layout";
 import { getLayout } from "../layout";
-import { useSearchParams } from "next/navigation";
 
-function MyApplications(props) {
-  const { user } = useContext(GlobalContext);
+function MyApplications() {
+  const user = JSON.parse(localStorage.getItem("userData"))
 
   return (
     <div className={styles.body}>
@@ -21,8 +20,7 @@ function MyApplications(props) {
       </div>
       <div className={styles.container}>
         <div className={styles.postContainer}>
-          <MyApplicationsCards />
-
+          <MyApplicationsCards userId={user.id}/>
           <div className={styles.pictureContainer}>
             <Image src={myApplicationspicture} alt="myApplicationspicture" />
           </div>
