@@ -8,7 +8,11 @@ import { GlobalContext } from "../layout";
 import { getLayout } from "../layout";
 
 function MyApplications() {
-  const user = JSON.parse(localStorage.getItem("userData"))
+  useEffect(() => {
+    const localStorageData = localStorage.getItem("userData");
+    const userData = JSON.parse(localStorageData);
+    setUser(userData);
+  }, []); // Dependency array
 
   return (
     <div className={styles.body}>
@@ -20,7 +24,7 @@ function MyApplications() {
       </div>
       <div className={styles.container}>
         <div className={styles.postContainer}>
-          <MyApplicationsCards userId={user.id}/>
+          <MyApplicationsCards userId={user.id} />
           <div className={styles.pictureContainer}>
             <Image src={myApplicationspicture} alt="myApplicationspicture" />
           </div>
