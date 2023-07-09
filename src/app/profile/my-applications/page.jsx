@@ -1,15 +1,21 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styles from "./my-applications.module.css";
 import { myApplicationspicture } from "../../public/assets/imagesCodes";
 import Image from "next/image";
 import MyApplicationsCards from "../../components/jobsComponents/jobsOfferCardContainerForMyApplications/myApplicationsCards";
 import { GlobalContext } from "../layout";
 import { getLayout } from "../layout";
-import { useSearchParams } from "next/navigation";
 
-function MyApplications(props) {
-  const { user } = useContext(GlobalContext);
+function MyApplications() {
+  // Define user state
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const localStorageData = localStorage.getItem("userData");
+    const userData = JSON.parse(localStorageData);
+    setUser(userData);
+  }, []); // Dependency array
 
   return (
     <div className={styles.body}>
@@ -21,8 +27,8 @@ function MyApplications(props) {
       </div>
       <div className={styles.container}>
         <div className={styles.postContainer}>
-          <MyApplicationsCards />
-
+          {/* Check if user data is available before trying to access its id */}
+          {user && <MyApplicationsCards userId={user.id} />}
           <div className={styles.pictureContainer}>
             <Image src={myApplicationspicture} alt="myApplicationspicture" />
           </div>
@@ -31,5 +37,6 @@ function MyApplications(props) {
     </div>
   );
 }
+
 MyApplications.getLayout = getLayout;
 export default MyApplications;

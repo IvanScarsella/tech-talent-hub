@@ -7,8 +7,11 @@ export default async function upgradePremium(userId) {
       id: userId,
     },
   });
-  console.log(user);
+  
   const userPreviousRemainingDays = 30;
+  const expPremiumDate = new Date();
+  expPremiumDate.setDate(expPremiumDate.getDate() + 30);
+    
   if (user.isPremium === false) {
     //HASTA ACA LLEGO TODO OK
     const updatedUser = await prisma.user.update({
@@ -17,7 +20,7 @@ export default async function upgradePremium(userId) {
       },
       data: {
         isPremium: true,
-        premiumUpdateDate: new Date(),
+        premiumUpdateDate: expPremiumDate,
         remainingPremiumDays:
           user.remainingPremiumDays + userPreviousRemainingDays,
       },
@@ -44,7 +47,7 @@ export default async function upgradePremium(userId) {
         id: userId,
       },
       data: {
-        premiumUpdateDate: new Date(),
+        premiumUpdateDate: user.premiumUpdateDate,
         remainingPremiumDays: user.remainingPremiumDays,
       },
     });

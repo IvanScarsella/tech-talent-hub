@@ -22,16 +22,13 @@ async function getValidate(email, password) {
     where: { email: email },
   });
 
-  function calculatePremiumRemainingDays(a, b) {
-    // Convertir las fechas a objetos Date
-    const today = new Date(a);
-    const premium = new Date(b);
+  function calculatePremiumRemainingDays(premiumDate, today) {
 
     // Calcular la diferencia en milisegundos
-    const calculate = today - premium;
+    const calculate = premiumDate - today;
 
     // Convertir la diferencia a días redondeando hacia abajo
-    const remainingDays = Math.floor(calculate / (1000 * 60 * 60 * 24));
+    const remainingDays = Math.round(calculate / (1000 * 60 * 60 * 24));
     // console.log(remainingDays);
     return remainingDays;
   }
@@ -63,13 +60,10 @@ async function getValidate(email, password) {
       },
     });
 
-    if (updateUser.isPremium === true || updateUser.remainingPremiumDays < 0) {
-      const remainingDays = calculatePremiumRemainingDays(
-        today,
-        userFound.premiumUpdateDate
-      );
+    if (updateUser.isPremium === true || updateUser.remainingPremiumDays > 0) {
+      const remainingDays = calculatePremiumRemainingDays(userFound.premiumUpdateDate,today);
 
-      if (remainingDays > updateUser.remainingPremiumDays) {
+      if (remainingDays <= 0) {
         const updatePremiumUser = await prisma.user.update({
           where: { id: userFound.id },
           data: {
